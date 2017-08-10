@@ -9,14 +9,15 @@ var connection = new Sequelize('warehouses', 'root', 'admin',{
 
 var Users = connection.define('users', {
 lastname:Sequelize.STRING,
-firstname: Sequelize.STRING
- 
+firstname: Sequelize.STRING,
+email: Sequelize.STRING
 },{timestamps: false});
 var us1;
 connection.sync().then(function (){
  Users.create({ 
   lastname: 'Bazayev',
- firstname: 'Askar'
+ firstname: 'Askar',
+ email: 'askar0409@hotmail.com'
  });
 for (var i = 1; i<20; i++) {
  Users.findById(i).then(function(users){
@@ -44,17 +45,21 @@ for (var i = 19; i<20; i++) {
 // res.send('ready to register');	
 });
 router.post('/', (req,res,next) => {
-Users.create({ 
-  lastname: 'Bazayev in Post',
- firstname: req.body.firstname
- });	
- Users.findById(1).then(function(users){
+
+$user = Users.create({ 
+ lastname: req.body.lastname,
+ firstname: req.body.firstname,
+ email: req.body.email
+ });
+$id = $user.id;
+  Users.findById($id).then(function(users){
  if (users != null){	
  console.log(users.dataValues);
 // res.send( users.getDataValue('firstname'));
-  res.render('register', { title: 'Express', firstname: users.getDataValue('firstname')});
- }
- });
-res.send('ok');
+  res.render('register', { title: 'Express', firstname: users.getDataValue('firstname'), lastname: users.getDataValue('lastname'), email: users.getDataValue('email') });
+}
+});  
+// res.send('ok');
 });
 module.exports = router;
+
