@@ -9,17 +9,17 @@ block content
         // register form
         form(method='POST' action='/register')
           div.form-group
-            label(for='lastname') Last Name:
-            input#lastname.form-control(type='text', placeholder='last' name='lastname')
+            label(for='name') Last Name:
+            input#name.form-control(type='text', placeholder='first and last' name='lastname' value=lastname )
           div.form-group
-            label(for='firstname')  First Name:
-            input#firstname.form-control(type='text', placeholder='first name' name='firstname')
+            label(for='firstname') Name:
+            input#firstname.form-control(type='text', class='firstname', placeholder='first name' name='firstname' value=firstname)
           div.form-group
             label(for='email') Email:
-            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+            input#email.form-control(type='email', placeholder='name@email.com' name='email' value=email)
           div.form-group
             label(for='favoriteBook') Favorite Book:
-            input#favoriteBook.form-control(type='text', placeholder='title of book' name='favoriteBook')
+            input#favoriteBook.form-control(type='text', placeholder='title of book' name='favoriteBook' value=favoritebook)
           div.form-group
             label(for='pw') Password:
             input#pw.form-control(type='password' name='password')
