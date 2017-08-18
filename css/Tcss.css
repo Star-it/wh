@@ -1,0 +1,613 @@
+.plus{
+    background-color:rgb(34, 71, 128);
+    color: rgb(241, 12, 12);
+    border: none;
+    width: 40px;
+    
+}
+
+.main-content__routes-wrapper {
+    padding-top: 25px; }
+
+.table-routes--style {
+
+  margin-top: 10px;
+
+  border: 3px solid #c5c5c5;
+  border-collapse: collapse;
+  /*height: 250px; */}
+
+.routes-heading-row--style {
+  background: #354a65;
+  color: #fff; }
+
+.routes-heading__col {
+  padding-bottom: 10px;
+  height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: bottom; }
+  .routes-heading__col--style {
+    border: 2px solid #c5c5c5;
+    font-weight: normal;
+    font-size: 0.95em; }
+
+.routes-heading__text {
+  display: block;
+  line-height: 21px; }
+
+.routes-row--style {
+  border: 2px solid #c5c5c5; }
+
+.routes-row__col {
+  text-align: center;
+  color: #000;
+  padding-left: 10px;
+  padding-right: 10px; }
+  .routes-row__col--style {
+    border: 2px solid #c5c5c5;
+    font-size: 1.0625em; }
+
+.settings-roles__table-adding {
+  display: inline-block;
+  margin-left: 650px;
+  font-size: 25px;
+  line-height: 20px;
+  padding: 0 10px; }
+
+  .settings-roles__table-adding--style {
+    border: 2px solid #344965;
+    color: #ff0000;
+    cursor: pointer; 
+    background: #234680;
+    }
+
+.r_invent-function__wrapper {
+  float: right; }
+
+.r_invent-function__r_invent-button {
+  display: inline-block;
+  padding: 5px 15px;
+  width: 30px; 
+height: 20px;}
+
+.r_invent-function__income-button {
+  display: inline-block;
+  padding: 5px 15px;
+  width: 200px; }
+
+.r_invent-button--red {
+  background: #e11c1f;
+  border: 1px solid #e11c1f; }
+
+
+.r_invent-button--common {
+  color: #fff;
+  text-transform: uppercase; }
+
+
+.above {
+  background: #c5c5c5;
+  visibility: hidden;
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  position: absolute;
+      top: 40vh;
+    left: 90vh;
+
+}
+
+.above li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+
+.onclick_tab{
+  cursor: pointer;
+}
+
+
+.dropdow__content {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  width: auto;
+  z-index: 10;
+   margin-left: -100px;
+   
+   }
+
+.dropdow__content ul{
+margin-left: -30px;
+   }
+
+   .dropdow__content li{
+list-style-type: none;
+margin-bottom: 5px;
+font-size: 0.85em;
+   }
+
+  .dropdow__content--style {
+    background: white;
+    color: #334a65;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1; }
+
+  .setr {
+   text-decoration: underline;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+    padding: 5px 10px 5px 10px; }
+
+      .setr1 {
+   text-decoration: underline;
+    cursor: pointer; 
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+    padding: 5px 10px 5px 10px;}
+
+
+
+.setting-role__table-adding {
+  display: inline-block;
+
+  font-size: 25px;
+  line-height: 20px;
+  padding: 0 5px; }
+
+
+  .setting-role__table-adding--style {
+    border: 2px solid #344965;
+    color: #ff0000;
+    cursor: pointer; }
+
+.setting-role__table-wrapper {
+  display: inline-block;
+  text-align: right; 
+background: #344965;
+width: 800px;}
+
+.setting-role__table--style {
+  border-collapse: collapse;
+  border: 3px solid #c5c5c5; }
+
+.setting-role__table-header {
+  padding: 7px 15px;
+  font-size: 1.3125em;
+  text-align: center; }
+
+  .setting-role__table-header--style {
+    border: 2px solid #c5c5c5;
+    color: #fff;
+    background: #344965;
+    text-transform: uppercase; }
+
+.setting-role__table-row--style {
+  border: 2px solid #c5c5c5; }
+
+.setting-role__table-data {
+  text-align: center;
+  font-size: 1.25em; }
+  .setting-role__table-data--style {
+    border: 2px solid #c5c5c5;
+    color: #000; }
+
+.setting-role__header-row--style {
+  border: 2px solid #c5c5c5; }
+
+.setting-role__adding-label {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  min-width: 50px;
+  margin-right: 5px; }
+
+  .setting-role__adding-label--style {
+    color: #fff; 
+    font-size: 1.25em;
+    margin-left: 80px;}
+
+.setting-role__adding-form {
+  padding: 0;
+  margin: 0;
+  width: 280px;
+  text-align: left;
+  padding: 10px 5px; }
+
+.setting-role__adding-input {
+  display: inline;
+  width: 200px;
+  margin-bottom: 15px;
+  padding: 5px; }
+  .setting-role__adding-input--style {
+    border: 1px solid #9e2b41; }
+
+.setting-role__adding-checkbox-wrapper {
+  text-align: left;
+  display: inline-block;
+  border: 1px solid #9e2b41;
+  padding: 10px; }
+
+.setting-role-right-wrapper {
+  text-align: right; }
+
+.setting-role__adding-label--check {
+  display: inline-block;
+  min-width: 125px; }
+
+.setting-role__adding-checkbox {
+  margin-bottom: 15px; }
+
+
+  .role_div{
+    display: inline-block;
+  }
+
+.table{
+    border-collapse: none;
+    border-spacing:0;
+    border-color: none;
+}
+
+    .table_input {
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    height: 25px;
+    width: 230px;
+    font-size: 1.125em; }
+    .table_input--style {
+      border: none;
+      background: rgba(255, 255, 255, 0.6);
+      color: #000; }
+
+     .table_td{
+      color: #fff;
+      padding-top: 40px;
+       padding-bottom: 20px;
+       text-align: center;
+       font-size: 1.25em;
+
+      } 
+
+      .table_td--style
+
+      .table_role{
+       
+      }
+
+
+
+.setting-form {
+  max-width: 1000px;
+  margin: 0 auto; }
+  .setting-form-wrapper {
+    margin-top: 10px;
+    padding: 25px; 
+/*overflow-y: scroll; */
+width: 80%;
+margin: 20px  auto;
+  }
+
+  
+    .setting-form-wrapper--style {
+      background: #344965;
+      -webkit-background: linear-gradient(to right, #344965, #9e2b41);
+      -moz-background: linear-gradient(to right, #344965, #9e2b41);
+      -o-background: linear-gradient(to right, #344965, #9e2b41);
+      background: linear-gradient(to right, #344965, #9e2b41); }
+  }
+  .setting-form__label {
+    font-size: 1.25em;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 200px;
+    margin-right: 15px; }
+    .setting-form__label--style {
+      color: #fff;
+      text-transform: capitalize; }
+  .setting-form__input {
+    outline: none;
+    margin-bottom: 25px;
+    padding: 10px;
+    display: inline-block;
+    width: 90%;
+    min-width: 200px;
+    max-width: 1500px;
+    font-size: 1.125em; }
+    .setting-form__input--style {
+      border: none;
+      background: rgba(255, 255, 255, 0.6);
+      color: #000; }
+    .setting-form__input:last-child {
+      margin-bottom: 0; }
+  .setting-form__password-menu {
+    margin-bottom: 25px; }
+  .setting-form__pass-header {
+    font-size: 1.375em;
+    padding: 0;
+    margin: 0;
+    margin: 25px 0; }
+    .setting-form__pass-header--style {
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase; }
+  .setting-form__header {
+    font-size: 1.875em;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin: 25px 0;
+    display: inline-block; }
+    .setting-form__header--style {
+      color: #fff;
+      text-transform: uppercase; }
+    .setting-form__header--block {
+      display: block; }
+  .setting-form__header-wrapper {
+    text-align: center; }
+
+.setting-form__submit-button {
+    display: inline-block;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 1.125em; }
+    .setting-form__submit-button--style {
+      border: 1px solid #334a65;
+      color: #334a65;
+      background: #fff;
+      border-radius: 10px; 
+      cursor: pointer;}
+
+
+  .setting-form__pay-item {
+    font-size: 1.125em;
+    display: inline-block;
+    min-width: 210px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    vertical-align: top;
+    margin-right: 40px; }
+    .setting-form__pay-item--style {
+      color: #334a65;
+      background: rgba(255, 255, 255, 0.6); }
+    .setting-form__pay-item:last-child {
+      margin-bottom: 0; }
+  .setting-form__pay-input {
+    vertical-align: top;
+    padding: 5px;
+    outline: none;
+    font-size: 1.125em;
+    width: 50%;
+    margin-bottom: 15px;
+    min-width: 220px; }
+    .setting-form__pay-input--style {
+      background: rgba(255, 255, 255, 0.6);
+      border: none;
+      color: #000; }
+  .setting-form__add-button {
+    display: inline-block;
+    padding: 6px 15px;
+    font-size: 1.125em; }
+    .setting-form__add-button-wrapper {
+      margin-bottom: 25px;
+      text-align: center; }
+    .setting-form__add-button--style {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      text-transform: lowercase;
+      cursor: pointer; }
+  .setting-form__additional {
+    margin-bottom: 25px; }
+  .setting-form__pay-wrapper {
+    display: none; }
+  .setting-form__submit-wrapper {
+    text-align: center; }
+  .setting-form__submit-button {
+    display: inline-block;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 1.125em; }
+    .setting-form__submit-button--style {
+      border: 1px solid #334a65;
+      color: #334a65;
+      background: #fff;
+      border-radius: 10px; }
+
+
+.role-button {
+  display: block;
+  margin: 0 auto;
+  padding: 7px 5px;
+  cursor: pointer; }
+
+  .role-button--style {
+    outline: none;
+    border: none;
+    color: #fff;
+    background: #9e2b41;
+    -webkit-background: linear-gradient(to right, #344965, #9e2b41);
+    -moz-background: linear-gradient(to right, #344965, #9e2b41);
+    -o-background: linear-gradient(to right, #344965, #9e2b41);
+    background: linear-gradient(to right, #344965, #9e2b41);
+    font-size: 1em;
+    -moz-box-shadow: -4px 4px 10px #676767;
+    -o-box-shadow: -4px 4px 10px #676767;
+    -webkit-box-shadow: -4px 4px 10px #676767;
+    -ms-box-shadow: -4px 4px 10px #676767;
+    box-shadow: -4px 4px 10px #676767; }
+
+
+.div2 {
+    display: none;
+    background: #c5c5c5;
+    position: absolute;
+    padding-top:20px;
+}
+
+.div1:active .div2 {
+    display: block;
+}
+
+.div2:hover {
+    display: block;
+}
+
+.div1 span{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dropd__content {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  width: auto;
+  z-index: 10;
+   margin-left: 480px;
+   
+   }
+
+.dropd__content ul{
+margin-left: -30px;
+   }
+
+   .dropd__content li{
+list-style-type: none;
+margin-bottom: 5px;
+font-size: 0.85em;
+   }
+
+  .dropd__content--style {
+    background: white;
+    color: #334a65;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1; }
+
+
+/*стилизация чекбоксов на транспорте
+*/
+    .checkbox-one {
+    display: none;
+}
+ 
+/* Задаем внешний вид для нашего кастомного чекбокса. Все обязательные свойства прокомментированы, остальные же свойства меняйте по вашему усмотрению */
+.checkbox-custom1 {
+    position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+    width: 20px;             /* Обязательно задаем ширину */
+    height: 20px;            /* Обязательно задаем высоту */
+  border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+}
+ 
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom1,
+.label-one {
+    display: inline-block;
+    vertical-align: middle;
+    color: rgba(53, 74, 101, 1); 
+   font-family: 'Gost', Arial, sans-serif;
+   font-size: 1.5em;
+}
+ 
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+.checkbox-one:checked + .checkbox-custom1::before {
+    content: "";             /* Добавляем наш псевдоэлемент */
+    display: block;          /* Делаем его блочным элементом */
+    position: absolute;      /* Позиционируем его абсолютным образом */
+ 
+    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+ 
+    background: #472a3f;     /* Добавляем фон. Если требуется, можете поставить сюда картинку в виде "галочки", которая будет символизировать, что чекбокс отмечен */
+    border-radius: 2px;
+}
+
+
+.checkbox-two {
+    display: none;
+}
+ 
+/* Задаем внешний вид для нашего кастомного чекбокса. Все обязательные свойства прокомментированы, остальные же свойства меняйте по вашему усмотрению */
+.checkbox-custom2 {
+    position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+    width: 20px;             /* Обязательно задаем ширину */
+    height: 20px;            /* Обязательно задаем высоту */
+  border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+}
+ 
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom2,
+.label-two {
+    display: inline-block;
+    vertical-align: middle;
+    color: rgba(53, 74, 101, 1); 
+   font-family: 'Gost', Arial, sans-serif;
+   font-size: 1.5em;
+}
+ 
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+.checkbox-two:checked + .checkbox-custom2::before {
+    content: "";             /* Добавляем наш псевдоэлемент */
+    display: block;          /* Делаем его блочным элементом */
+    position: absolute;      /* Позиционируем его абсолютным образом */
+ 
+    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+ 
+    background: #472a3f;     /* Добавляем фон. Если требуется, можете поставить сюда картинку в виде "галочки", которая будет символизировать, что чекбокс отмечен */
+    border-radius: 2px;
+}
+
+
+.checkbox-three {
+    display: none;
+}
+ 
+/* Задаем внешний вид для нашего кастомного чекбокса. Все обязательные свойства прокомментированы, остальные же свойства меняйте по вашему усмотрению */
+.checkbox-custom3 {
+    position: relative;      /* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+    width: 20px;             /* Обязательно задаем ширину */
+    height: 20px;            /* Обязательно задаем высоту */
+  border: 2px solid #fff;
+   
+}
+ 
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom3,
+.label-three {
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+.checkbox-three:checked + .checkbox-custom3::before {
+    content: "";             /* Добавляем наш псевдоэлемент */
+    display: block;          /* Делаем его блочным элементом */
+    position: absolute;      /* Позиционируем его абсолютным образом */
+ 
+    /* Задаем расстояние от верхней, правой, нижней и левой границы */
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+ 
+    background: #fff;     /* Добавляем фон. Если требуется, можете поставить сюда картинку в виде "галочки", которая будет символизировать, что чекбокс отмечен */
+    border-radius: 2px;
+}

@@ -1,0 +1,194 @@
+
+.font-padding--style{
+    width:auto;
+    padding: 0;
+    margin: auto;
+    font-size: 12.5px;
+}
+.popup-form--style table{
+  border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid rgb(52,73,101);
+    background-color: white;  
+    margin: 10px;
+    min-height: 400px;
+}
+.popup-form--style th,.popup-form--style td{
+    border: 1px solid rgb(52,73,101);
+}
+.popup-form--style input, .popup-form--style label{
+    margin-top: 20px;
+    padding: 0; 
+}
+.popup-form--style form input[type="submit"]{
+    background-color: rgb(52, 73, 101);
+    color: white;
+    float: right;
+}
+.popup-form--style{
+    padding: 10px;
+    padding-bottom: -20px;
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 10%;
+     background: #344965;
+      -webkit-background: linear-gradient(to right, #344965, #9e2b41);
+      -moz-background: linear-gradient(to right, #344965, #9e2b41);
+      -o-background: linear-gradient(to right, #344965, #9e2b41);
+      background: linear-gradient(to right, #344965, #9e2b41); 
+}
+.popup-form--style table input{
+    max-width: 100px;
+}
+.table-title{
+    padding: 20px;
+    text-align: left;
+     border: 2px solid #9e2b41;  
+}
+
+.table-title1{
+    padding: 10px;
+    text-align: center;
+     border: 2px solid #9e2b41; 
+     color: #354a65; 
+     font-weight: normal;
+}
+
+.labinc{
+color: #354a65; 
+font-weight: normal;
+}
+
+/* Top Checkboxes */
+
+.top-checkboxes{
+    border-bottom: 3px solid #244581;
+    
+    margin: 0px;
+}
+.top-checkboxes .items{
+    width: 32%;
+    display: inline-block;
+}
+.top-checkboxes input[type=checkbox]{
+    transform: scale(1);
+}
+.tab-content{
+    padding: 0px;
+}
+.plus{
+    background-color:rgb(34, 71, 128);
+    color: rgb(241, 12, 12);
+    border: none;
+    width: 40px;
+    
+}
+.buttons {
+    float : right;
+    clear: left;
+    margin-right: 10px;
+}
+.default-buttons{
+    margin: 5px;
+       background-color: white; 
+      border: 3px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+}
+.orders-title{
+    padding: 10px;
+    float: left;
+    margin: 3px;
+    background: linear-gradient(to right,#344965,#9e2b41);
+}
+.main-table{
+    clear:both;
+
+}
+.main-table table{
+    width: 100%;
+    border-collapse: collapse;
+     border: 1px solid #c5c5c5;
+}
+.main-table th{
+    height: 20px;
+    padding: 10px 0 10px 0;
+    border: 1px solid #c5c5c5;
+    background-color: rgb(53, 74, 101);
+}
+.main-table td{
+    border: 1px solid #c5c5c5;
+border: 1px solid #c5c5c5;
+    color: rgb(79, 96, 118);
+}
+
+.income-heading__col {
+  padding-bottom: 10px;
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: bottom; }
+  .income-heading__col--style {
+    border: 2px solid #c5c5c5;
+    font-weight: normal;
+    font-size: 1em; }
+
+    .inc_inp{
+       border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1; 
+    }
+
+    .tit{
+        background: #48445f;
+        text-align: center;
+        color: #fff;
+        width: 200px;
+        padding: 4px;
+        font-weight: normal;
+    }
+
+    .tab_inc td, tr, th{
+          border: 2px solid #c5c5c5; 
+         
+    }
+
+    .pad5 td, tr, th{
+          border: 2px solid #c5c5c5; 
+    }
+
+    .subinp{
+    width: 150px;
+     height: 25px;    
+     margin-right:20px;
+margin-top: -10px;
+     color: white;
+     text-align: center;
+     border: none;
+     background: linear-gradient(to right,#9e2b42, #9e2b41);
+
+box-shadow: 0 0 5px #000; 
+
+}
+.select1{
+   border: 2px solid transparent;
+   border-image: linear-gradient(to bottom, #9e2b41 0%, #344965 100%);
+    border-image-slice: 1;
+}
+.shadowtable{
+  box-shadow: 0 8px 10px grey;
+   color: white;
+   font-weight: normal;
+}
+.calculation123{
+  color: white; 
+   font-family: 'Gost', Arial, sans-serif;
+  margin-left: 10px;
+}
+.formcenter{
+  text-align: center; 
+  padding: 5px; 
+  left: 0;
+   width: 100%;
+}
