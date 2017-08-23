@@ -3,10 +3,14 @@ var router = express.Router();
 var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
 // var app.use(express.bodyParser());
+var session = require('express-session');
+// var session = require('session-store');
+// initalize sequelize with session store dd
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-var connection = new Sequelize('warehouses', 'root', 'admin',{
+ var connection = new Sequelize('warehouses', 'root', 'admin',{
  dialect: 'mysql'
-});
+ });
 
 var Users = connection.define('users', {
 id: {
@@ -20,43 +24,34 @@ email: Sequelize.STRING,
 password: Sequelize.STRING
  
 },{timestamps: false});
+var Session = connection.define('Session', {
+  sid: {
+    type: Sequelize.STRING,
+    primaryKey: true
+  },
+  userId: Sequelize.STRING,
+  expires: Sequelize.DATE,
+  data: Sequelize.STRING(50000)
+});
+ 
+function extendDefaultFields(defaults, session) {
+  return {
+    data: defaults.data,
+    expires: defaults.expires,
+    userId: session.userId
+  };
+}
+ 
+//var store = new SessionStore({
+  var store = new SequelizeStore({
+  db: connection,
+  table: 'Session',
+  extendDefaultFields: extendDefaultFields
+});
 var us1;
 connection.sync();
-/* .then(function (){
- Users.create({ 
-  lastname: 'Bazayev',
- firstname: 'Askar'
- });
-for (var i = 1; i<20; i++) {
- Users.findById(i).then(function(users){
- if (users != null)	
- console.log(users.dataValues);
- });
-}
-
-});
-*/
 router.get('/', (req,res,next) => {
-//  res.render('index', { title: 'Express' });
-/*
-for (var i = 199; i<200; i++) {
- Users.findById(i).then(function(users){
- if (users != null){	
-// console.log(users.dataValues);
-// us1 = users;
-// res.send( users.getDataValue('firstname'));
-  res.render('register', { title: 'Express', firstname: users.getDataValue('firstname'), lastname: users.getDataValue('lastname'), email: users.getDataValue('email')});
- //	 res.render('register', { title: 'Express', firstname: users.firstname, lastname: users.lastname, email: users.email})
- }
- });
-}
-//  User.findAll().then(users => {
-//   console.log(users)
-// })
-// res.send('ready to register');	
-*/
- // res.render('register', { title: 'Express'})
- 	 res.render('register', { title: 'Express', firstname: req.body.firstname, lastname: req.body.lastname, email: email});
+ 	 res.render('register', { title: 'Express', firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email});
 });
 
 router.post('/', (req,res,next) => {
@@ -92,43 +87,9 @@ var users = Users.create({
 //   console.log(users2.getDataValue('firstname'));
    console.log('firstname:');
    console.log(users2.firstname);
-// 	 res.render('register', { title: 'Express', firstname: users2.getDataValue('firstname'), lastname: users2.lastname, email: users2.email});
-// 	 res.render('register', { title: 'Express', firstname: users2.getDataValue('firstname'), lastname: users2.getDataValue('lastname'), email: users2.getDataValue('email')});
- // res.send('Hello');
   	 res.render('register', { title: 'Express', firstname: 'Askar', lastname: 'bazayv', email: 'As@mk.com'});
- 	 /*  
-  Users.findById(users2.id)}).then(function(users3){
-      console.log(users3)
- 	if (users3 != null){	
- //	 console.log(users.dataValues);
-// res.send( users.getDataValue('firstname'));
- 	 res.render('register', { title: 'Express', firstname: users3.firstname, lastname: users3.lastname, email: users3.email})
- 
-	}
-	else res.send('ok234');
-//  });  //then int1
-// Users.findById(new_user.id).then(function(users){
-*/  
   });  //then int 2
   });  //post
 
- /*	
- Users.findById(new_user.id).then(function(users){
- if (users != null){	
- console.log(users.dataValues);
-// res.send( users.getDataValue('firstname'));
-  res.render('register', { title: 'Express', firstname: users.getDataValue('firstname'), lastname: users.getDataValue('lastname'), email: users.getDataValue('email')});
- }
- });
-
- Users.findById(new_user.id).then(function(user){
- if (user != null){	
-// console.log(user.firstname);
-// res.send( users.getDataValue('firstname'));
-  res.render('register', { title: 'Express', firstname: user.firstname, lastname: user.lastname, email: user.email});
- }
- });
-*/
-// res.send('ok');
-
+ 
 module.exports = router;
