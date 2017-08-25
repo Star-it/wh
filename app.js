@@ -46,6 +46,8 @@ var users = require('./routes/users');
 // var birds = require('./routes/birds');
 var register = require('./routes/register');
 var profile = require('./routes/profile');
+var users_list = require('./routes/users_list');
+var user_details = require('./routes/user_details');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 
@@ -68,6 +70,8 @@ app.use('/', index);
 // app.use('/birds', birds);
 app.use('/register', register);
 app.use('/profile', profile);
+app.use('/users_list', users_list);
+app.use('/user_details', user_details);
 app.use('/login', login);
 app.use('/logout', logout);
 

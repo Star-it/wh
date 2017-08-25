@@ -1,24 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
+var db = require('../models/dbs.js');
+var database = new db('localhost', 'root', 'admin', 'warehouses');
+var sess;
 var bcrypt = require('bcrypt');
+// var app.use(express.bodyParser());
+var session = require('express-session');
+// var session = require('session-store');
+// initalize sequelize with session store dd
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-var connection = new Sequelize('warehouses', 'root', 'admin',{
+ var connection = new Sequelize('warehouses', 'root', 'admin',{
  dialect: 'mysql'
-});
-
-var Users = connection.define('users', {
-id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-lastname:Sequelize.STRING,
-firstname: Sequelize.STRING,
-email: Sequelize.STRING,
-password: Sequelize.STRING
- 
-},{timestamps: false});
+ });
 var us1;
 var sess;
 connection.sync();
@@ -38,7 +33,7 @@ var salt = bcrypt.genSaltSync(10);
 var hash = bcrypt.hashSync(req.body.password, salt);
 // Finally just store the hash in your DB
 // .. code to store in Redis/Mongo/Mysql/Sqlite/Postgres/etc	
-var users1 = Users.findOne({
+var users1 = database.Users.findOne({
   where: { // SELECT * FROM users WHERE email: req.body.email
     email: req.body.email
   }

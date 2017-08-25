@@ -1,23 +1,57 @@
+var Sequelize = require('sequelize');
 var mysql = require('mysql2');
 var bcrypt = require('bcrypt');
+var session = require('express-session');
 var async = require('async');
-class DB {
+ var connection = new Sequelize('warehouses', 'root', 'admin',{
+ dialect: 'mysql'
+ });
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
+ class DBS {		// database with Sequelize
     constructor (host, dbusername, dbpassword, dbname){
         this._host = host;
         this._dbusername = dbusername;
         this._dbpassword = dbpassword;
         this._dbname = dbname;
-        var con = mysql.createConnection({
-            host: this._host,
-            user: this._dbusername,
-            password: this._dbpassword,
-            database: this._dbname 
-        });
-        con.connect((err) => {
-            if(err) return false;
-        });
+        var con = new Sequelize(this._dbname, this._dbusername, this._dbpassword, { dialect: 'mysql' });
         this.con = con;
-    }
+	this.Users = connection.define('users', {
+	id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  	},
+	lastname:Sequelize.STRING,
+	firstname: Sequelize.STRING,
+	email: Sequelize.STRING,
+	password: Sequelize.STRING
+ 
+	},{timestamps: false});
+	this.Session = connection.define('Session', {
+  sid: {
+    type: Sequelize.STRING,
+    primaryKey: true
+  },
+  userId: Sequelize.STRING,
+  expires: Sequelize.DATE,
+  data: Sequelize.STRING(50000)
+});
+var extendDefaultFields= function(defaults, session){
+  return {
+    data: defaults.data,
+    expires: defaults.expires,
+    userId: session.userId
+  };
+}
+ //var store = new SessionStore({
+  this.store = new SequelizeStore({
+  db: con,
+  table: 'Session',
+  extendDefaultFields: extendDefaultFields
+});
+
+   } // constructor
+ 
     createUser(req, res){
         var firstname = req.body.firstname;
         var lastname = req.body.lastname;
@@ -39,6 +73,7 @@ var hash = bcrypt.hashSync(req.body.password, salt);
             res.redirect('/login');
         });
     }
+ 
     checkUser(req, res){
         var email = req.body.email;
         var password = req.body.password;
@@ -58,5 +93,17 @@ var hash = bcrypt.hashSync(req.body.password, salt);
             }
         })
     }
+    deleteUser(req, res){
+        var email = req.body.email;
+        var password = req.body.password;
+        let sql = "DELETE FROM `users` WHERE email='" + email + "'";
+        return this.con.query(sql, (err, result, fields)=>{
+            if(err){
+            	 throw err;
+            }else{
+                res.redirect('/users_list');
+            }
+        })
+    }
 }
-module.exports = DB2;
+module.exports = DBS;
