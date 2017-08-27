@@ -1,4 +1,4 @@
-var express = require('express');
+﻿var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
 var db = require('../models/dbs.js');
@@ -8,8 +8,10 @@ var bcrypt = require('bcrypt');
 // var app.use(express.bodyParser());
 var session = require('express-session');
 // var session = require('session-store');
+var expressValidator = require("express-validator");
 // initalize sequelize with session store dd
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
+router.use(expressValidator());
 
  var connection = new Sequelize('warehouses', 'root', 'admin',{
  dialect: 'mysql'
@@ -22,20 +24,27 @@ router.get('/', (req,res,next) => {
 });
 
 router.post('/', (req,res,next) => {
-if (req.body.password !== req.body.confirmedPassword){
-	console.log('Пароль и его подnверждение не совпадают');
-	console.log(req.body.password);
-	console.log(req.body.confirmedPassword);
-//	res.send('Пароль и его подверждение не совпадают');
-}
-/*
-    if(req.session.email){
-        res.redirect('/profile');
-    }else{
-    database.createUser(req, res)};
-*/
 
-// Generate a salt
+  console.log('I am here 0'); 
+  req.check('firstname', 'Name must be Filled in').notEmpty();
+  console.log('I am here 1'); 
+  req.check('email', 'Email must be Filled in').notEmpty();
+  console.log('I am here 2'); 
+  req.check('email', "Invalid Email").isEmail();
+  console.log('I am here 3'); 
+  req.check('password', 'Password Field must be Filled in').notEmpty();
+  console.log('I am here 4'); 
+  req.check('password', 'Passwords do not Match').equals(req.body.confirmed_password)
+  console.log('I am here 4a'); 
+  // debug('debug works!!');
+  var errors = req.validationErrors();
+  if(errors){
+    console.log('I am here 5'); 
+    res.send(errors);
+  }  else{
+    
+  console.log('I am here 050'); 
+  // Generate a salt
 var salt = bcrypt.genSaltSync(10);
 // Hash the password with the salt
 var hash = bcrypt.hashSync(req.body.password, salt);
@@ -61,8 +70,8 @@ var users = database.Users.create({
    console.log(users2.firstname);
   	 res.render('register', { title: 'Express', firstname: 'Askar', lastname: 'bazayv', email: 'As@mk.com'});
   });  //then int 2
-
-  });  //post
+ } // else check
+});  //post
 
  
 module.exports = router;

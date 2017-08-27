@@ -23,13 +23,26 @@ function(req, res) {
   console.log(user_id_del);
   database.Users.destroy(
         {  where: {id:user_id_del}}
-      ).then(function(err){
-        if (err)
-        //    res.status(500).send(err);
-        res.sendStatus(500).send(err);
-        else
-            res.redirect('/users_list')
-    });
+      )
+	.then(function (deletedRecord) {
+
+            if(deletedRecord === 1){
+                res.status(200).json({message:"Deleted successfully"});
+
+            }
+            else
+            {
+                res.status(404).json({message:"record not found"})
+            }
+
+
+        })
+        .catch(function (error){
+            res.status(500).json(error);
+        });
+
+
+
 });
  
 module.exports = router;

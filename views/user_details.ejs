@@ -20,12 +20,13 @@
             <label for="password">Пароль : </label><br>
             <input type="password" name="password" value=""><br>
             <label for="confirmed_password">Подтвержденный пароль : </label><br>
-            <input type="password" name="confirmedPassword" value=""><br>
+            <input type="password" name="confirmed_password" value=""><br>
             <label for="name">Name : </label><br>
             <input type="text" name="name" placeholder="Name..."><br>
             <label for="city">City : </label><br>
             <input type="text" name="city" placeholder="City..."><br>
             <input type="submit" value="Сохранить">
+            <input type=text name="errors" value="<%= (!!errors)?errors:'' %>" >
         </form>
     </body>
 </html>
