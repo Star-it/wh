@@ -15,18 +15,34 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
         this._dbname = dbname;
         var con = new Sequelize(this._dbname, this._dbusername, this._dbpassword, { dialect: 'mysql' });
         this.con = con;
+	this.Clients = connection.define('clients', {
+	id: {
+             type: Sequelize.INTEGER,
+             primaryKey: true,
+             autoIncrement: true
+  	},
+	name:Sequelize.STRING,
+	title: Sequelize.STRING,
+	description: Sequelize.STRING,
+	address: Sequelize.STRING,
+	bin_iin: Sequelize.STRING,
+	bank_data: Sequelize.STRING,
+ 	status:Sequelize.INTEGER,
+	rating:Sequelize.INTEGER
+	},{timestamps: false});
 	this.Users = connection.define('users', {
 	id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+    	     type: Sequelize.INTEGER,
+             primaryKey: true,
+             autoIncrement: true
   	},
 	lastname:Sequelize.STRING,
 	firstname: Sequelize.STRING,
 	email: Sequelize.STRING,
-	password: Sequelize.STRING
- 
+	password: Sequelize.STRING,
+ 	clients_id:Sequelize.INTEGER
 	},{timestamps: false});
+	this.Clients.hasMany(this.Users); // Will add client_id to user
 	this.Session = connection.define('Session', {
   sid: {
     type: Sequelize.STRING,
