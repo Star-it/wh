@@ -2,13 +2,36 @@
 <html>
     <head>
         <title>Register</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+        /*
+        $(document).ready(function(){
+            $("#cbIsCompany").change(function(){
+             alert(document.getElementById('cbIsCompany').style.visibility);   
+                if (document.getElementById('cbIsCompany').style.visibility === "hidden" )
+                    $("#company_data").show()
+                else
+                    $("#company_data").hide()
+            });
+        });
+        */
+        function myFunction() {
+    var x = document.getElementById('company_data');
+    if (x.style.display === 'none') {
+//        alert(document.getElementById('cbIsCompany').style.display);   
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+        </script>
     </head>
     <body>
         <h1>Register</h1>
         <a href="/">Index</a>
         <a href="/login">Login</a>
         <br><br>
-        <form action="/register" method="post">
+        <form action="/login" method="post">
             <label for="firstname">Имя : </label><br>
             <input type="text" name="firstname" placeholder="Имя..."><br>
             <label for="lastname">Фамилия : </label><br>
@@ -21,14 +44,17 @@
             <input type="password" name="confirmed_password" placeholder="Password..."><br>
             <label for="name">Name : </label><br>
             <input type="text" name="name" placeholder="Name..."><br>
-            <input type="checkbox" name="cbIsCompany" value="Company" > Юридическое лицо?<br>
-            <span style="visibility:\"<%= true ? 'visible;','hidden;' %>\" >
-                Appropriate style in this tag
+            <input type="checkbox" name="cbIsCompany" id="cbIsCompany" value="Company" onchange="myFunction()"> Юридическое лицо?<br>
+            <div id='company_data' >
                 <label for="company">Company : </label><br>
                 <input type="text" name="company_name" placeholder="Company name..."><br>
-            </span>
-            <input type="text" name="company_name" placeholder="Company name2..."><br>' : '' %>
+            </div>
+            <input type="text" name="company_name2" placeholder="Company name2..."><br>
             <input type="submit">
-        </form>
+            <p>If you click on the "Hide" button, I will disappear.</p>
+            
+            <button id="hide">Hide</button>
+            <button id="show">Show</button>
+            </form>
     </body>
 </html>
