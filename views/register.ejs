@@ -21,8 +21,13 @@
             <input type="password" name="confirmed_password" placeholder="Password..."><br>
             <label for="name">Name : </label><br>
             <input type="text" name="name" placeholder="Name..."><br>
-            <label for="city">City : </label><br>
-            <input type="text" name="city" placeholder="City..."><br>
+            <input type="checkbox" name="cbIsCompany" value="Company" > Юридическое лицо?<br>
+            <span style="visibility:\"<%= true ? 'visible;','hidden;' %>\" >
+                Appropriate style in this tag
+                <label for="company">Company : </label><br>
+                <input type="text" name="company_name" placeholder="Company name..."><br>
+            </span>
+            <input type="text" name="company_name" placeholder="Company name2..."><br>' : '' %>
             <input type="submit">
         </form>
     </body>

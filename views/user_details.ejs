@@ -4,9 +4,10 @@
         <title>Register</title>
     </head>
     <body>
-        <h1>Register</h1>
+        <h1>User Data</h1>
         <a href="/">Index</a>
         <a href="/login">Login</a>
+        <a href="/users_list">User's List</a>
         <br><br>
         <form action="/user_details" method="post">
             <label for="user.id">user.id : </label><br>
@@ -26,7 +27,7 @@
             <label for="city">City : </label><br>
             <input type="text" name="city" placeholder="City..."><br>
             <input type="submit" value="Сохранить">
-            <input type=text name="errors" value="<%= (!!errors)?errors:'' %>" >
+            <input type=text name="errors"  style=" color: red; font-weight: bold; "" value="<%= (!!errors)?errors:'' %>" >
         </form>
     </body>
 </html>

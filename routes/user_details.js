@@ -55,8 +55,9 @@ var users = database.Users.findById(userid).then(function(user){
   if (!result.isEmpty()) {
         var errors = result.array().map(function (elem) {
      //     console.log('There are following validation errors: ' + errors.join('&&'));
-          res.render('user_details', { errors: errors });
-              return elem.msg;
+ //         res.render('user_details', { errors: errors });
+            res.render('user_details', { user:user,errors: elem.msg });
+            return elem.msg;
         });
   } else{
     
