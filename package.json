@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "wh",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "ejs": "^2.5.7",
-    "express": "~4.15.2",
+    "express": "^4.15.4",
     "express-session": "^1.15.5",
     "express-session-sequelize": "^1.1.0",
     "express-validator": "^4.0.0",

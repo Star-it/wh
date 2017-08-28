@@ -40,9 +40,9 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 	firstname: Sequelize.STRING,
 	email: Sequelize.STRING,
 	password: Sequelize.STRING,
- 	clients_id:Sequelize.INTEGER
+ 	client_id:Sequelize.INTEGER
 	},{timestamps: false});
-	this.Clients.hasMany(this.Users); // Will add client_id to user
+	// this.Clients.hasMany(this.Users); // Will add client_id to user
 	this.Session = connection.define('Session', {
   sid: {
     type: Sequelize.STRING,
