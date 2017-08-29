@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order's details</title>
+    </head>
+    <body>
+        <h1>Order's details </h1>
+        <a href="/">Index</a>
+        <a href="/login">Login</a>
+        <a href="/users_list">User's List</a>
+        <br><br>
+        <form action="/order_details" method="post">
+            <label for="order.id">user.id : </label><br>
+            <input type="text" name="orderid" readonly=true value="<%= order.id %>"><br>
+            <label for="document_no"> : </label><br>
+            <input type="text" name="docunment_no" value="<%= order.document_no %>" /><br>
+            <label for="document_date">Дата документа : </label><br>
+            <input type="text" name="document_date" value="<%= order.document_date %>"><br>
+            <label for="email">Email : </label><br>
+            <input type="text" name="email" value="<%= user.email %>"><br>
+            <label for="password">Пароль : </label><br>
+            <input type="password" name="password" value=""><br>
+            <label for="confirmed_password">Подтвержденный пароль : </label><br>
+            <input type="password" name="confirmed_password" value=""><br>
+            <label for="name">Name : </label><br>
+            <input type="text" name="name" placeholder="Name..."><br>
+            <label for="city">City : </label><br>
+            <input type="text" name="city" placeholder="City..."><br>
+            <input type="submit" value="Сохранить">
+            <input type=text name="errors"  style=" color: red; font-weight: bold; "" value="<%= (!!errors)?errors:'' %>" >
+        </form>
+    </body>
+</html>
