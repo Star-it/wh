@@ -50,6 +50,8 @@ var users1 = database.Users.findOne({
   	sess.email = user.email;
   	sess.firstname = user.firstname;
   	sess.lastname = user.lastname;
+  	sess.client_id = user.client_id;
+  	sess.user_id = user.id;
   	res.redirect('/');
  // 	res.render('index', {title: 'Express'}); // ; // true
  return;
