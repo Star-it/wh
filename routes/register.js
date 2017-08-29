@@ -66,9 +66,28 @@ var users = database.Users.create({
 
 //   console.log(users2);
 //   console.log(users2.getDataValue('firstname'));
+   if (req.body.cbIsCompany){
+    var clients = database.Clients.create({
+    id: users2.id,   
+    name: req.body.company_name,
+    address: req.body.company_address,
+    bin_iin: req.body.bin_iin,
+    bank_data: req.body.bank_data,
+    description: req.body.company_description
+    });
+    /*.then(function(req,res, next) {
+      res.send('client inserted')
+    }
+    
+     // console.log('cbIsCompany is checked');
+    */
+  }
+   else
+    console.log('cbIsCompany is not checked');
    console.log('firstname:');
    console.log(users2.firstname);
-  	 res.render('register', { title: 'Express', firstname: 'Askar', lastname: 'bazayv', email: 'As@mk.com'});
+   res.redirect('/login');
+//  	 res.render('register', { title: 'Express', firstname: 'Askar', lastname: 'bazayv', email: 'As@mk.com'});
   });  //then int 2
  } // else check
 });  //post

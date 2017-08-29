@@ -17,11 +17,11 @@
         */
         function myFunction() {
     var x = document.getElementById('company_data');
-    if (x.style.display === 'none') {
+    if (x.style.display === 'block') {
 //        alert(document.getElementById('cbIsCompany').style.display);   
-        x.style.display = 'block';
-    } else {
         x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
     }
 }
         </script>
@@ -31,7 +31,7 @@
         <a href="/">Index</a>
         <a href="/login">Login</a>
         <br><br>
-        <form action="/login" method="post">
+        <form action="/register" method="post">
             <label for="firstname">Имя : </label><br>
             <input type="text" name="firstname" placeholder="Имя..."><br>
             <label for="lastname">Фамилия : </label><br>
@@ -44,12 +44,16 @@
             <input type="password" name="confirmed_password" placeholder="Password..."><br>
             <label for="name">Name : </label><br>
             <input type="text" name="name" placeholder="Name..."><br>
-            <input type="checkbox" name="cbIsCompany" id="cbIsCompany" value="Company" onchange="myFunction()"> Юридическое лицо?<br>
+            <input type="checkbox" name="cbIsCompany" id="cbIsCompany" value="Company" onchange="myFunction()"  > Юридическое лицо?<br>
             <div id='company_data' >
                 <label for="company">Company : </label><br>
                 <input type="text" name="company_name" placeholder="Company name..."><br>
+                <input type="text" name="bank_data" placeholder="Bank data..."><br>
+                <input type="text" name="company_address" placeholder="Company address..."><br>
+                <input type="text" name="company_phone" placeholder="Company phone..."><br>
+                <input type="text" name="company_decription" placeholder="Company description..."><br>
+                <input type="text" name="bin_iin" placeholder="bin_iin..."><br>
             </div>
-            <input type="text" name="company_name2" placeholder="Company name2..."><br>
             <input type="submit">
             <p>If you click on the "Hide" button, I will disappear.</p>
             
