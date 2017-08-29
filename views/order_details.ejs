@@ -16,16 +16,10 @@
             <input type="text" name="docunment_no" value="<%= order.document_no %>" /><br>
             <label for="document_date">Дата документа : </label><br>
             <input type="text" name="document_date" value="<%= order.document_date %>"><br>
-            <label for="email">Email : </label><br>
-            <input type="text" name="email" value="<%= user.email %>"><br>
-            <label for="password">Пароль : </label><br>
-            <input type="password" name="password" value=""><br>
-            <label for="confirmed_password">Подтвержденный пароль : </label><br>
-            <input type="password" name="confirmed_password" value=""><br>
-            <label for="name">Name : </label><br>
-            <input type="text" name="name" placeholder="Name..."><br>
-            <label for="city">City : </label><br>
-            <input type="text" name="city" placeholder="City..."><br>
+            <label for="order_type">Тип документа : </label><br>
+            <input type="text" name="order_type" value="<%= order.type %>"><br>
+            <label for="order_type">Статус документа : </label><br>
+            <input type="text" name="order_status" value="<%= order.status %>"><br>
             <input type="submit" value="Сохранить">
             <input type=text name="errors"  style=" color: red; font-weight: bold; "" value="<%= (!!errors)?errors:'' %>" >
         </form>
