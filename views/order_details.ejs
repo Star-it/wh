@@ -9,7 +9,7 @@
         <a href="/login">Login</a>
         <a href="/users_list">User's List</a>
         <br><br>
-        <form action="/order_details" method="post">
+        <form action="/orders_list/create_order" method="post">
             <label for="order.id">user.id : </label><br>
             <input type="text" name="orderid" readonly=true value="<%= order.id %>"><br>
             <label for="document_no"> : </label><br>
@@ -17,9 +17,10 @@
             <label for="document_date">Дата документа : </label><br>
             <input type="text" name="document_date" value="<%= order.document_date %>"><br>
             <label for="order_type">Тип документа : </label><br>
-            <input type="text" name="order_type" value="<%= order.type %>"><br>
+            <input type="text" name="order_type" value="<%= order.order_types_id %>"><br>
             <label for="order_type">Статус документа : </label><br>
-            <input type="text" name="order_status" value="<%= order.status %>"><br>
+            <input type="text" name="order_status" value="<%= order.order_status_id %>"><br>
+            <input type="text" name="contragent_id" value="<%= order.contragent_id %>"><br>
             <input type="submit" value="Сохранить">
             <input type=text name="errors"  style=" color: red; font-weight: bold; "" value="<%= (!!errors)?errors:'' %>" >
         </form>

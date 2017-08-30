@@ -67,6 +67,7 @@ var users = database.Users.create({
 //   console.log(users2);
 //   console.log(users2.getDataValue('firstname'));
    if (req.body.cbIsCompany){
+    users2.client_id=users2.id; 
     var clients = database.Clients.create({
     id: users2.id,   
     name: req.body.company_name,
@@ -84,8 +85,6 @@ var users = database.Users.create({
   }
    else
     console.log('cbIsCompany is not checked');
-   console.log('firstname:');
-   console.log(users2.firstname);
    res.redirect('/login');
 //  	 res.render('register', { title: 'Express', firstname: 'Askar', lastname: 'bazayv', email: 'As@mk.com'});
   });  //then int 2

@@ -18,7 +18,7 @@ var connection = new Sequelize(
     'dialect': 'mysql' //, 
  //   "storage": "./session.sqlite"
 });
-
+require('events').EventEmitter.defaultMaxListeners = 20;
 // configure express 
 var app = express();
 app.use(cookieParser());
@@ -48,6 +48,9 @@ var register = require('./routes/register');
 var profile = require('./routes/profile');
 var users_list = require('./routes/users_list');
 var user_details = require('./routes/user_details');
+var orders_list = require('./routes/orders_list');
+var order_details = require('./routes/order_details');
+var create_order = require('./routes/create_order');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 
@@ -72,6 +75,9 @@ app.use('/register', register);
 app.use('/profile', profile);
 app.use('/users_list', users_list);
 app.use('/user_details', user_details);
+app.use('/order_details', order_details);
+app.use('/orders_list', orders_list);
+app.use('/create_order', create_order);
 app.use('/login', login);
 app.use('/logout', logout);
 

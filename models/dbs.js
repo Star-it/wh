@@ -19,7 +19,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 	id: {
              type: Sequelize.INTEGER,
              primaryKey: true,
-             autoIncrement: true
+             autoIncrement: false
   	},
 	name:Sequelize.STRING,
 	title: Sequelize.STRING,
@@ -40,9 +40,27 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 	firstname: Sequelize.STRING,
 	email: Sequelize.STRING,
 	password: Sequelize.STRING,
- 	client_id:Sequelize.INTEGER
-	},{timestamps: false});
-	// this.Clients.hasMany(this.Users); // Will add client_id to user
+ 	client_id:Sequelize.INTEGER,
+     created_at: Sequelize.DATE,
+     updated_at: Sequelize.DATE
+    },{timestamps: false});
+	this.Orders = connection.define('orders', {
+        id: {
+                 type: Sequelize.INTEGER,
+                 primaryKey: true,
+                 autoIncrement: true
+          },
+        document_no:Sequelize.STRING,
+        document_date: Sequelize.DATE,
+        order_status_id: Sequelize.INTEGER,
+        order_types_id: Sequelize.INTEGER,
+        contragent_id: Sequelize.INTEGER,
+        client_id: Sequelize.INTEGER,
+        user_id: Sequelize.INTEGER,
+        created_at: Sequelize.DATE,
+        updated_at: Sequelize.DATE
+    },{timestamps: false});
+        // this.Clients.hasMany(this.Users); // Will add client_id to user
 	this.Session = connection.define('Session', {
   sid: {
     type: Sequelize.STRING,

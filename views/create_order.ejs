@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order's details</title>
+    </head>
+    <body>
+        <h1>Order's details </h1>
+        <a href="/">Index</a>
+        <a href="/login">Login</a>
+        <a href="/users_list">User's List</a>
+        <br><br>
+        <form action="/create_order" method="post">
+            <label for="document_no"> : </label><br>
+            <input type="text" name="document_no"  placeholder="Номер документа..."><br>
+            <label for="document_date">Дата документа : </label><br>
+            <input type="text" name="document_date" ><br>
+            <label for="order_types_id">Тип документа : </label><br>
+            <input type="text" name="order_types_id" ><br>
+            <label for="order_status_id">Статус документа : </label><br>
+            <input type="text" name="order_status_id" ><br>
+            <label for="contragent_id">Контрагент : </label><br>
+            <input type="text" name="contragent_id" ><br>
+            <input type="submit" value="Сохранить">
+            <input type=text name="errors"  style=" color: red; font-weight: bold;" value="<%= (!!errors)?errors:'' %>" >
+        </form>
+    </body>
+</html>
