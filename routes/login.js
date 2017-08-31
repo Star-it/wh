@@ -2,7 +2,13 @@ var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
 var db = require('../models/dbs.js');
-var database = new db('localhost', 'root', 'admin', 'warehouses');
+var database = new db('localhost', 'root', 'admin', 'wh',{
+  host: "127.0.0.1",
+  dialect: 'mysql',
+  define: {
+      timestamps: false
+  }
+});
 var sess;
 var bcrypt = require('bcrypt');
 // var app.use(express.bodyParser());
@@ -11,12 +17,12 @@ var session = require('express-session');
 // initalize sequelize with session store dd
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
- var connection = new Sequelize('warehouses', 'root', 'admin',{
- dialect: 'mysql'
- });
+// var connection = new Sequelize('warehouses', 'root', 'admin',{
+// dialect: 'mysql'
+// });
 var us1;
 var sess;
-connection.sync();
+//connection.sync();
 
 router.get('/', (req,res,next) => {
 //  res.render('index', { title: 'Express' });

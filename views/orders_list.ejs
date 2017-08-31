@@ -28,14 +28,14 @@
             <td><%= order.order_status_id %></td>
             <td><%= order.contragent_id %></td>
             <td>
-             <a href="/order_details?order.id=<%= order.id %>&order_type<%= order.order_type %>" ><img height=16 width=16 src="/images/edit-icon-6.png"/></a>
+             <a href="/order_details?order.id=<%= order.id %>" ><img height=16 width=16 src="/images/edit-icon-6.png"/></a>
              <a href="/orders_list/delete?order.id=<%= order.id %>" ><img height=16 width=16 src="/images/garbage_bin.jpg"/></a>
             </td>
             </tr>
              <% }); %>
             </tbody>
         </table>    
-        <a href="/create_order" ><img height=16 width=16 src="/images/add_doc-6.png"/>Добавить ордер</a>
+        <a href="/create_order" ><img height=16 width=16 src="/images/add_doc.png"/>Добавить ордер</a>
     </form>
     </body>
 </html>

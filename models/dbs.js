@@ -40,9 +40,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 	firstname: Sequelize.STRING,
 	email: Sequelize.STRING,
 	password: Sequelize.STRING,
- 	client_id:Sequelize.INTEGER,
-     created_at: Sequelize.DATE,
-     updated_at: Sequelize.DATE
+ 	client_id:Sequelize.INTEGER
     },{timestamps: false});
 	this.Orders = connection.define('orders', {
         id: {
@@ -56,9 +54,17 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
         order_types_id: Sequelize.INTEGER,
         contragent_id: Sequelize.INTEGER,
         client_id: Sequelize.INTEGER,
-        user_id: Sequelize.INTEGER,
-        created_at: Sequelize.DATE,
-        updated_at: Sequelize.DATE
+        user_id: Sequelize.INTEGER
+    
+    },{timestamps: false});
+	this.Order_types = connection.define('order_types', {
+        id: {
+                 type: Sequelize.INTEGER,
+                 primaryKey: true,
+                 autoIncrement: true
+          },
+        name:Sequelize.STRING
+        
     },{timestamps: false});
         // this.Clients.hasMany(this.Users); // Will add client_id to user
 	this.Session = connection.define('Session', {
@@ -69,7 +75,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
   userId: Sequelize.STRING,
   expires: Sequelize.DATE,
   data: Sequelize.STRING(50000)
-});
+},{timestamps: false});
 var extendDefaultFields= function(defaults, session){
   return {
     data: defaults.data,

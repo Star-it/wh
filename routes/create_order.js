@@ -24,8 +24,13 @@ router.use(expressValidator());
  
  var us1;
  router.get('/', (req,res,next) => {
-console.log('in Get');
-  res.render('create_order', {errors:'' });
+//var order_types=['test1','test2'];
+    database.Order_types.findAll().forEach(function(order_type){    
+console.log(order_type.name);
+});
+// eate_order', { order_types:order_types });
+
+ //res.render('order_details', { order_types:order_types });
 });
 
 

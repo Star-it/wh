@@ -70,7 +70,7 @@ var users = database.Users.findById(userid).then(function(user){
    password:hash },
   {  where: {id:userid}}
 ).then(result =>{
-     console.log('updated');
+     console.log('User updated');
      res.redirect('/users_list')
     }).catch(err =>{
     console.log('User not updated' );
