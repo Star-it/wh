@@ -1,5 +1,8 @@
 var express = require('express');
-var Sequelize = require('sequelize');
+var db = require('./models/dbs.js');
+var database = new db();
+var bcrypt = require('bcrypt');
+database.con.sync();
 
 // var connect = require('connect')
     // for express, just call it with 'require('express-session').Store' 
@@ -11,13 +14,14 @@ var session = require('express-session');
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // create database, ensure mysql ('sqlite3') in your package.json 
-var connection = new Sequelize(
+/*var connection = new Sequelize(
 'warehouses',
 'root',
-'admin', {
+'Mandriva2012', {
     'dialect': 'mysql' //, 
  //   "storage": "./session.sqlite"
 });
+*/
 require('events').EventEmitter.defaultMaxListeners = 20;
 // configure express 
 var app = express();
@@ -28,7 +32,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
   store: new SequelizeStore({
-    db: connection
+    db: database.con
   }) //,
 //  proxy: true // if you do SSL outside of node. 
 }));

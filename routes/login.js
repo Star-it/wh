@@ -2,13 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
 var db = require('../models/dbs.js');
-var database = new db('localhost', 'root', 'admin', 'wh',{
-  host: "127.0.0.1",
-  dialect: 'mysql',
-  define: {
-      timestamps: false
-  }
-});
+var database = new db();
+database.con.sync();
 var sess;
 var bcrypt = require('bcrypt');
 // var app.use(express.bodyParser());

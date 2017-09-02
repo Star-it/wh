@@ -16,14 +16,7 @@
             <input type="text" name="document_date" ><br>
             <label for="order_types_id">Тип документа : </label><br>
             <input type="text" name="order_types_id" ><br>
-            <select class="selectpicker" data-style="btn-info" name="selectpicker">
-                <optgroup label="Select Table">
-                    <option value="">Выберите тип документа</option>
-                    <% order_types.forEach(function(row){ %>
-                    <option value="<%= row.id) %>"><%= row.name %></option>
-                    <% }) %>
-                </optgroup>
-            </select>            <label for="order_status_id">Статус документа : </label><br>
+<label for="order_status_id">Статус документа : </label><br>
             <input type="text" name="order_status_id" ><br>
             <label for="contragent_id">Контрагент : </label><br>
             <input type="text" name="contragent_id" ><br>

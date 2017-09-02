@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
 var db = require('../models/dbs.js');
-var database = new db('localhost', 'root', 'admin', 'warehouses');
+var database = new db();
+database.con.sync();
 var bcrypt = require('bcrypt');
 // var app.use(express.bodyParser());
 var session = require('express-session');
@@ -18,7 +19,7 @@ router.get('/', (req,res,next) => {
 });	// then
 }); // get
 router.get('/delete', function(req, res) {
-  var user_id_del = req.query['order.id'];
+  var order_id_del = req.query['order.id'];
   console.log('order_id_del:');
   console.log(order_id_del);
   database.Orders.destroy(

@@ -1,21 +1,21 @@
+const config = require('../config/db_wh')
 var Sequelize = require('sequelize');
 var mysql = require('mysql2');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
 var async = require('async');
- var connection = new Sequelize('warehouses', 'root', 'admin',{
- dialect: 'mysql'
- });
+const connection = new Sequelize(`${config.engine}://${config.username}:${config.password}@${config.host}/${config.database}`)
+
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
- class DBS {		// database with Sequelize
-    constructor (host, dbusername, dbpassword, dbname){
-        this._host = host;
-        this._dbusername = dbusername;
-        this._dbpassword = dbpassword;
-        this._dbname = dbname;
-        var con = new Sequelize(this._dbname, this._dbusername, this._dbpassword, { dialect: 'mysql' });
-        this.con = con;
-	this.Clients = connection.define('clients', {
+class DBS {		// database with Sequelize
+   constructor (){
+       this._host = '{config.host}';
+       this._dbusername = '${config.username}';
+       this._dbpassword = '${config.password}';
+       this._dbname = '${config.database}';
+       this._engine = '${config.engine}';
+       this.con = connection;
+   this.Clients = connection.define('clients', {
 	id: {
              type: Sequelize.INTEGER,
              primaryKey: true,
@@ -85,7 +85,7 @@ var extendDefaultFields= function(defaults, session){
 }
  //var store = new SessionStore({
   this.store = new SequelizeStore({
-  db: con,
+  db: connection,
   table: 'Session',
   extendDefaultFields: extendDefaultFields
 });

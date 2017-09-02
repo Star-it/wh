@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 var db = require('../models/dbs.js');
-var database = new db('localhost', 'root', 'admin', 'warehouses');
+var database = new db();
+database.con.sync();
 var sess;
 //router.get('/', (req,res,next) => {
 	

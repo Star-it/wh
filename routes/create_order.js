@@ -2,7 +2,7 @@
 var router = express.Router();
 var Sequelize = require('sequelize');
 var db = require('../models/dbs.js');
-var database = new db('localhost', 'root', 'admin', 'warehouses');
+var database = new db();
 var sess;
 var bcrypt = require('bcrypt');
 database.con.sync();
@@ -25,12 +25,12 @@ router.use(expressValidator());
  var us1;
  router.get('/', (req,res,next) => {
 //var order_types=['test1','test2'];
-    database.Order_types.findAll().forEach(function(order_type){    
-console.log(order_type.name);
-});
-// eate_order', { order_types:order_types });
-
- //res.render('order_details', { order_types:order_types });
+//    database.Order_types.findAll().forEach(function(order_type){    
+console.log('test create order');
+//});
+res.render( 'create_order', {title:'Create orders'});
+//res.send('hello');
+// details');
 });
 
 
