@@ -55,6 +55,7 @@ var user_details = require('./routes/user_details');
 var orders_list = require('./routes/orders_list');
 var order_details = require('./routes/order_details');
 var create_order = require('./routes/create_order');
+var main = require('./routes/main');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 
