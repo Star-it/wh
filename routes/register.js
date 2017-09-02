@@ -67,7 +67,6 @@ var users = database.Users.create({
 //   console.log(users2);
 //   console.log(users2.getDataValue('firstname'));
    if (req.body.cbIsCompany){
-    users2.client_id=users2.id; 
     var clients = database.Clients.create({
     id: users2.id,   
     name: req.body.company_name,
@@ -75,13 +74,26 @@ var users = database.Users.create({
     bin_iin: req.body.bin_iin,
     bank_data: req.body.bank_data,
     description: req.body.company_description
-    });
+  });
     /*.then(function(req,res, next) {
       res.send('client inserted')
     }
     
      // console.log('cbIsCompany is checked');
     */
+    database.Users.update(
+      { client_id: users2.id 
+      },
+      {  where: {id:users2.id}}
+    ).then(result =>{
+         console.log('User updated');
+        }).catch(err =>{
+        console.log('User not updated' );
+        console.log( err);
+        });
+     
+    //users2.client_id=users2.id; 
+    
   }
    else
     console.log('cbIsCompany is not checked');

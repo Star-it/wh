@@ -46,7 +46,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
  var bcrypt = require('bcrypt');
 var index = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
 // var birds = require('./routes/birds');
 var register = require('./routes/register');
 var profile = require('./routes/profile');
@@ -55,7 +55,7 @@ var user_details = require('./routes/user_details');
 var orders_list = require('./routes/orders_list');
 var order_details = require('./routes/order_details');
 var create_order = require('./routes/create_order');
-var main = require('./routes/main');
+//var main = require('./routes/main');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 
